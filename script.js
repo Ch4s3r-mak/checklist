@@ -17,22 +17,24 @@ new Chart(ctx1, {
     },
     options: {
         responsive: true,
+        maintainAspectRatio: false, // 💡 [추가] 모바일에서 세로로 길어지도록 비율 고정 해제
         plugins: {
             title: { display: true, text: '주로 섭취하는 카페인 종류' },
             datalabels: { display: false } 
         },
-        // 👇 Y축 단위를 5단위로 고정하는 설정 추가
+        // Y축 단위를 5단위로 고정하는 설정
         scales: {
             y: {
                 beginAtZero: true, // 0부터 시작
                 ticks: {
-                    stepSize: 5 // 💡 눈금 간격을 5단위로 설정
+                    stepSize: 5 // 눈금 간격을 5단위로 설정
                 }
             }
         }
     }
 });
 
+// 3. 파이 차트 (평균 수면 시간)
 const ctx2 = document.getElementById('sleepChart').getContext('2d');
 new Chart(ctx2, {
     type: 'pie',
@@ -45,6 +47,7 @@ new Chart(ctx2, {
     },
     options: {
         responsive: true,
+        maintainAspectRatio: false, // 💡 [추가] 파이 차트도 화면 높이에 맞춰 깔끔하게 정렬
         plugins: {
             title: { display: true, text: '카페인 섭취자의 평균 수면 시간 비율' },
             datalabels: {
@@ -56,7 +59,7 @@ new Chart(ctx2, {
                     let dataArr = ctx.chart.data.datasets[0].data;
                     dataArr.map(data => { sum += data; });
                     let percentage = (value * 100 / sum).toFixed(1) + "%";
-                    return percentage; // 단순 수치를 원하면 'return value;'로 변경
+                    return percentage; 
                 },
                 font: {
                     weight: 'bold',
