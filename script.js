@@ -6,7 +6,7 @@ const ctx1 = document.getElementById('typeChart').getContext('2d');
 new Chart(ctx1, {
     type: 'bar',
     data: {
-        labels: ['에너지 드링크', '커피류(커피우유 포함)', '기타'],
+        labels: ['에너지 드링크', '커피류', '기타'],
         datasets: [{
             label: '선호하는 카페인 종류',
             data: [24, 41, 3],
