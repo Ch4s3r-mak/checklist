@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청소년 카페인 세이프티</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        header>
+            <h1>☕ 카페인 신호등</h1>
+            <p>나의 하루 권장량을 지키고 있는지 확인하세요.</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <label>내 몸무게 (kg)</label>
+                <input type="number" id="weight" placeholder="예: 55">
+
+                <label>음료 선택</label>
+                <select id="drinkSelect">
+                    <option value="0.47">스누피 커피우유</option>
+                    <option value="0.42">스타벅스 아메리카노(T)</option>
+                    <option value="0.28">몬스터 에너지</option>
+                    <option value="0.25">레드불 / 박카스</option>
+                    <option value="0.24">핫식스</option>
+                    <option value="0.10">콜라</option>
+                    <option value="0.04">아이스티</option>
+                </select>
+
+                <label>마신 양 (ml)</label>
+                <input type="number" id="amount" placeholder="예: 355">
+
+                <button id="calcBtn">결과 확인하기</button>
+            </div>
+
+            <div id="resultCard" class="result-card hidden">
+                <p id="statusText"></p>
+                <div class="info">
+                    <span>나의 권장량: <b id="maxMg">0</b>mg</span><br>
+                    <span>현재 섭취량: <b id="currentMg">0</b>mg</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
