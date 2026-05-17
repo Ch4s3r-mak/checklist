@@ -15,17 +15,24 @@
             flex-direction: column; 
             align-items: center; 
             background-color: #f4f4f9; 
+            margin: 0;
+            padding: 10px; /* 모바일에서 좌우 여백 확보 */
         }
         .chart-container { 
-            width: 80%; 
-            max-width: 600px; 
+            width: 95%; /* 모바일 등 좁은 화면에서는 꽉 차게 */
+            max-width: 600px; /* 컴퓨터 같은 넓은 화면에서는 최대 600px까지만 */
             background: white; 
-            padding: 20px; 
+            padding: 15px; 
             border-radius: 10px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* shadow를 box-shadow로 수정 */
-            margin-top: 30px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+            margin-top: 20px; 
+            box-sizing: border-box; /* 패딩 때문에 박스가 깨지는 것 방지 */
         }
-        h1 { color: #333; }
+        h1 { 
+            color: #333; 
+            font-size: 1.5rem; /* 모바일에서도 제목 크기가 적당하도록 설정 */
+            text-align: center;
+        }
     </style>
 
     <script src="script.js" defer></script> 
