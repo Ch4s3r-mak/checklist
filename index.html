@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카페인 실태 분석</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            background-color: #f4f4f9; 
+        }
+        .chart-container { 
+            width: 80%; 
+            max-width: 600px; 
+            background: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* shadow를 box-shadow로 수정 */
+            margin-top: 30px; 
+        }
+        h1 { color: #333; }
+    </style>
+
+    <script src="script.js" defer></script> 
+    </head>
+<body>
+
+    <h1> 청소년 카페인 섭취 실태</h1>
+    
+    <div class="chart-container">
+        <canvas id="typeChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="sleepChart"></canvas>
+    </div>
+
+
+    <div class="chart-container">
+        <h2>⚠️ 청소년 카페인 경고 및 권장량</h2>
+        <p style="color: #d9534f; font-weight: bold; line-height: 1.6;">
+            "무심코 마신 에너지 드링크, 청소년의 성장을 방해하고 수면 장애와 심장 두근거림을 유발할 수 있습니다."
+        </p>
+        <div style="background-color: #fff3cd; padding: 15px; border-radius: 8px; margin-top: 15px; border-left: 5px solid #ffc107;">
+            <p style="margin: 0; font-weight: bold; color: #856404;">📌 식약처 기준 청소년 하루 최대 권장 섭취량</p>
+            <p style="margin: 10px 0 0 0; font-size: 18px; font-weight: bold; color: #533f03;">
+                몸무게 1kg당 <span style="color: #d9534f;">2.5mg</span> 이하
+            </p>
+            <p style="margin: 5px 0 0 0; font-size: 14px; color: #666;">
+                (예: 몸무게 50kg 청소년 기준 일일 <span style="font-weight: bold;">125mg</span> 이하 / 에너지 드링크 1캔이면 하루 권장량 초과)
+            </p>
+        </div>
+    </div>
+
+    <div class="chart-container" style="text-align: left;">
+        <h2>📝 나의 카페인 중독 자가진단</h2>
+        <p style="color: #666;">최근 나의 상태와 일치하는 항목에 체크해 보세요.</p>
+        
+        <form id="quizForm" style="margin-top: 20px;">
+            <div style="margin-bottom: 12px;">
+                <label><input type="checkbox" class="caffeine-check" value="1"> 1. 하루라도 카페인을 마시지 않으면 집중이 안 된다.</label>
+            </div>
+            <div style="margin-bottom: 12px;">
+                <label><input type="checkbox" class="caffeine-check" value="1"> 2. 카페인을 마시지 않으면 두통이나 피로감이 심하다.</label>
+            </div>
+            <div style="margin-bottom: 12px;">
+                <label><input type="checkbox" class="caffeine-check" value="1"> 3. 원래 마시던 양보다 더 많은 양을 마셔야 효과가 있다.</label>
+            </div>
+            <div style="margin-bottom: 12px;">
+                <label><input type="checkbox" class="caffeine-check" value="1"> 4. 밤에 잠이 안 올 것을 알면서도 카페인을 찾게 된다.</label>
+            </div>
+            <div style="margin-bottom: 12px;">
+                <label><input type="checkbox" class="caffeine-check" value="1"> 5. 주변 사람들이 나에게 카페인을 너무 많이 마신다고 걱정한다.</label>
+            </div>
+            <div style="margin-bottom: 12px;">
+                <label><input type="checkbox" class="caffeine-check" value="1"> 6. 심장 두근거림이나 손떨림을 느끼면서도 계속 마신다.</label>
+            </div>
+            
+            <button type="button" onclick="checkCaffeineLevel()" style="background-color: #FF9F43; color: white; border: none; padding: 12px 20px; font-size: 16px; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 15px; font-weight: bold;">
+                진단 결과 확인하기
+            </button>
+        </form>
+
+        <div id="quizResult" style="margin-top: 20px; padding: 15px; border-radius: 8px; display: none; font-weight: bold; text-align: center;">
+        </div>
+    </div>
+</body>
+</html>
