@@ -19,15 +19,16 @@
             padding: 10px; /* 모바일에서 좌우 여백 확보 */
         }
         .chart-container { 
-            width: 95%; /* 모바일 등 좁은 화면에서는 꽉 차게 */
-            max-width: 600px; /* 컴퓨터 같은 넓은 화면에서는 최대 600px까지만 */
-            background: white; 
-            padding: 15px; 
-            border-radius: 10px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-            margin-top: 20px; 
-            box-sizing: border-box; /* 패딩 때문에 박스가 깨지는 것 방지 */
-        }
+        width: 95%; 
+        max-width: 600px; 
+        height: 400px; /* 💡 그래프 박스의 세로 높이를 400픽셀로 고정 */
+        background: white; 
+        padding: 15px; 
+        border-radius: 10px; 
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+        margin-top: 20px; 
+        box-sizing: border-box; 
+    }
         h1 { 
             color: #333; 
             font-size: 1.5rem; /* 모바일에서도 제목 크기가 적당하도록 설정 */
