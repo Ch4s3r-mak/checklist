@@ -6,7 +6,7 @@ const ctx1 = document.getElementById('typeChart').getContext('2d');
 new Chart(ctx1, {
     type: 'bar',
     data: {
-        labels: ['에너지 드링크', '커피류', '기타'],
+        labels: ['에너지 드링크', '커피류(커피우유 포함)', '기타'],
         datasets: [{
             label: '선호하는 카페인 종류',
             data: [24, 41, 3],
@@ -20,6 +20,15 @@ new Chart(ctx1, {
         plugins: {
             title: { display: true, text: '주로 섭취하는 카페인 종류' },
             datalabels: { display: false } 
+        },
+        // 👇 Y축 단위를 5단위로 고정하는 설정 추가
+        scales: {
+            y: {
+                beginAtZero: true, // 0부터 시작
+                ticks: {
+                    stepSize: 5 // 💡 눈금 간격을 5단위로 설정
+                }
+            }
         }
     }
 });
